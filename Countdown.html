@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <style>
+        @font-face {
+            font-family: countDown1;
+            src: url(font/loveBox.ttf);
+         }
+
+         @font-face {
+            font-family: countDown2;
+            src: url(font/toughCookie.otf);
+         }
+
+        body {
+            background-color: black;
+        }
+        
+        h2 {
+            color: white;
+            /* font-family: "Lucida Console", Courier, monospace; */
+            font-family: countDown1;
+            font-size: 45;
+            right: 33%;
+            top: 68%;
+            position: absolute;
+        }
+        
+        .button1 {
+            left: 43%;
+            top: 68%;
+            width: 100;
+            position: absolute;
+        }
+        .button2 {
+            right: 45%;
+            top: 68%;
+            width: 100;
+            position: absolute;
+        }
+        .swapImage {
+            right: 27%;
+            top: 4%;
+            position: absolute;
+        }
+        .button3 {
+     
+            left: 50%;
+            top: 87%;
+            height: 100;
+            position: absolute;
+        }
+        .button4 {
+            right: 60%;
+            left: 42%;
+            top: 87%;
+            height: 100;
+            position: absolute;
+        }
+        .conundrumText {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!--GIF Countdown image-->
+    <figure>
+        <img class="swapImage" id="swapImage" src="img/clock_30_img.png" height="517" width="919">
+    </figure>
+    <br/>
+    <br/>
+    <br/>
+    <!--Vowel & consonant Buttons-->
+    <div class="buttons">
+        <form>
+            <input type="button" class="button1" value="Vowel" onclick="generator('vowel')" />
+            <input type="button" class="button2" value="Consonant" onclick="generator('consonant')" />
+        </form>
+    </div>
+    <br/>
+    <br/>
+    <!--Conundrum-->
+    <div class="conundrumDiv">
+        <h2 class="conundrumText">Today's Conundrum:<br/>
+            <span id="conundrumOutput"></span>
+        </h2>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <!--Let's Countdown button-->
+    <form>
+        <input type="button" class="button4" value="Play Countdown!" onclick="startCountdown()" />
+        <input type="button" class="button3" value="Stop Countdown!" onclick="stopCountdown()" />
+    </form>
+    <!--JS File-->
+    <script src="CountdownFunction.js"></script>
+</body>
+
+</html>
