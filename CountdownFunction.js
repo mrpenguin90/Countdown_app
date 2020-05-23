@@ -7,25 +7,25 @@ const image = document.getElementById('swapImage');
 
 
 // Generates the random vowel/constanant location in the array
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-}
+const getRandomInt = (max) => Math.floor(Math.random() * max);
+
 // Actual wordGen
 function generator(choice) {
     const vowelAudio = new Audio('snd/vowel.ogg');
-    const consonantAudio = new Audio('snd/consonant.mp3')
-    if (choice === "vowel") {
-        conundrum = conundrum + vowelPicker[getRandomInt(0, vowelPicker.length)];
+    const consonantAudio = new Audio('snd/consonant.mp3')    
+if (conundrum.length < 20) {
+     if (choice === "vowel") {
+        conundrum = conundrum + vowelPicker[getRandomInt(vowelPicker.length)];
         vowelAudio.play();
     } else {
-        conundrum = conundrum + constPicker[getRandomInt(0, constPicker.length)];
+        conundrum = conundrum + constPicker[getRandomInt(constPicker.length)];
         consonantAudio.play()
     }
+    
     // Output result to HTML
     conundrumOutput.innerHTML = conundrum;
-};
+
+}};
 
 // Start Countdown
 async function startCountdown() {
@@ -34,9 +34,11 @@ async function startCountdown() {
     } else {
         image.src = "img/clock_30.gif";
         audio.play();
-    }
+    setTimeout(() => {
+        image.src = "img/clock_30_img.png" 
+           }, 30000)
 
-};
+    }};
 
 // Stop Countdown
 function stopCountdown() {
